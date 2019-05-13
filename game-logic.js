@@ -21,7 +21,6 @@ function update(){
     	addPathTree();
     	if(!hasCollided){
 			score+=2*treeReleaseInterval;
-			scoreText.innerHTML=score.toString();
 		}
     }
     doTreeLogic();

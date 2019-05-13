@@ -48,27 +48,6 @@ function createScene(){
 	window.addEventListener('resize', onWindowResize, false);//resize callback
 
 	document.onkeydown = handleKeyDown;
-	
-	scoreText = document.createElement('div');
-	scoreText.style.position = 'absolute';
-	//text2.style.zIndex = 1;    // if you still don't see the label, try uncommenting this
-	scoreText.style.width = 100;
-	scoreText.style.height = 100;
-	//scoreText.style.backgroundColor = "blue";
-	scoreText.innerHTML = "0";
-	scoreText.style.top = 50 + 'px';
-	scoreText.style.left = 10 + 'px';
-	document.body.appendChild(scoreText);
-  
-  var infoText = document.createElement('div');
-	infoText.style.position = 'absolute';
-	infoText.style.width = 100;
-	infoText.style.height = 100;
-	infoText.style.backgroundColor = "yellow";
-	infoText.innerHTML = "UP - Jump, Left/Right - Move";
-	infoText.style.top = 10 + 'px';
-	infoText.style.left = 10 + 'px';
-	document.body.appendChild(infoText);
 }
 
 
