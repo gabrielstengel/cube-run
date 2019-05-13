@@ -15,7 +15,7 @@ var heroSphere;
 var rollingSpeed=0.008;
 var heroRollingSpeed;
 var worldRadius=26;
-var heroRadius=0.2;
+var heroRadius=0.4;
 var sphericalHelper;
 var pathAngleValues;
 var heroBaseY=1.8;

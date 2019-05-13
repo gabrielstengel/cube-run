@@ -28,8 +28,8 @@ function createScene(){
 	addLight();
 	addExplosion();
 	
-	camera.position.z = 6.5;
-	camera.position.y = 2.5;
+	camera.position.z = 8.5;
+	camera.position.y = 3.3;
 	/*orbitControl = new THREE.OrbitControls( camera, renderer.domElement );//helper to rotate around in scene
 	orbitControl.addEventListener( 'change', render );
 	orbitControl.noKeys = true;
