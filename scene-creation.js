@@ -1,3 +1,5 @@
+
+
 function createScene(){
 	hasCollided=false;
 	score=0;
@@ -22,14 +24,16 @@ function createScene(){
 	dom.appendChild(renderer.domElement);
 	//stats = new Stats();
 	//dom.appendChild(stats.dom);
+
+	
 	createTreesPool();
 	addWorld();
 	addHero();
 	addLight();
 	addExplosion();
 	
-	camera.position.z = 8.5;
-	camera.position.y = 3.3;
+	camera.position.z = 9.5;
+	camera.position.y = 3.5;
 	/*orbitControl = new THREE.OrbitControls( camera, renderer.domElement );//helper to rotate around in scene
 	orbitControl.addEventListener( 'change', render );
 	orbitControl.noKeys = true;
@@ -40,6 +44,7 @@ function createScene(){
 	orbitControl.minAzimuthAngle = -0.2;
 	orbitControl.maxAzimuthAngle = 0.2;
 	*/
+	
 	window.addEventListener('resize', onWindowResize, false);//resize callback
 
 	document.onkeydown = handleKeyDown;
@@ -65,6 +70,8 @@ function createScene(){
 	infoText.style.left = 10 + 'px';
 	document.body.appendChild(infoText);
 }
+
+
 function addExplosion(){
 	particleGeometry = new THREE.Geometry();
 	for (var i = 0; i < particleCount; i ++ ) {
@@ -72,8 +79,8 @@ function addExplosion(){
 		particleGeometry.vertices.push( vertex );
 	}
 	var pMaterial = new THREE.ParticleBasicMaterial({
-	  color: 0xfffafa,
-	  size: 0.2
+	  color: Colors.brownDark,
+	  size: 0.3
 	});
 	particles = new THREE.Points( particleGeometry, pMaterial );
 	scene.add( particles );

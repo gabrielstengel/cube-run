@@ -21,6 +21,6 @@ function explode(){
 		vertex.z = -0.2+Math.random() * 0.4;
 		particleGeometry.vertices[i]=vertex;
 	}
-	explosionPower=1.07;
+	explosionPower=1.12;
 	particles.visible=true;
 }
