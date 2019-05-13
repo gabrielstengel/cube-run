@@ -67,7 +67,7 @@ function updateHero(){
 	// depending on the mouse position which ranges between -1 and 1 on both axes;
 	// to achieve that we use a normalize function (see below)
 	
-	var targetX = normalize(mousePos.x, -1, 1, -4, 4);
+	var targetX = normalize(mousePos.x, -1, 1, -3, 3);
 	
 
 	// update the airplane's positions

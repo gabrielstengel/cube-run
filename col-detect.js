@@ -10,9 +10,10 @@ function doTreeLogic(){
 			treesToRemove.push(oneTree);
 		}else{
 			//check collision
-			if(treePos.distanceTo(heroSphere.position)<=0.6){
+			if(treePos.distanceTo(heroSphere.position)<=0.9){
 				console.log("hit");
 				hasCollided=true;
+				treesToRemove.push(oneTree);
 				explode();
 				gameOver();
 			}
