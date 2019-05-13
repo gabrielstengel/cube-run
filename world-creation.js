@@ -15,7 +15,7 @@ function addHero(){
 function addWorld(){
 	var sides=40;
 	var tiers=40;
-	var sphereGeometry = new THREE.SphereGeometry( worldRadius, sides,tiers);
+	var sphereGeometry = new THREE.SphereGeometry( worldRadius, 100,100);
 	var sphereMaterial = new THREE.MeshPhysicalMaterial( { color: Colors.pink } )
 	
 	rollingGroundSphere = new THREE.Mesh( sphereGeometry, sphereMaterial );
@@ -27,17 +27,45 @@ function addWorld(){
 	rollingGroundSphere.position.y= -24;
 	rollingGroundSphere.position.z=2;
 	addWorldTrees();
+	createSky();
 }
-function addLight(){
-	var hemisphereLight = new THREE.HemisphereLight(0xfffafa,0x000000, .9)
-	scene.add(hemisphereLight);
-	sun = new THREE.DirectionalLight( 0xcdc1c5, 0.9);
-	sun.position.set( 12,6,-7 );
-	sun.castShadow = true;
-	scene.add(sun);
-	//Set up shadow properties for the sun light
-	sun.shadow.mapSize.width = 256;
-	sun.shadow.mapSize.height = 256;
-	sun.shadow.camera.near = 0.5;
-	sun.shadow.camera.far = 50 ;
+
+
+var hemisphereLight, shadowLight;
+
+function addLight() {
+	// an ambient light modifies the global color of a scene and makes the shadows softer
+	ambientLight = new THREE.AmbientLight(0xdc8874, .5);
+	scene.add(ambientLight);
+	// A hemisphere light is a gradient colored light; 
+	// the first parameter is the sky color, the second parameter is the ground color, 
+	// the third parameter is the intensity of the light
+	hemisphereLight = new THREE.HemisphereLight(0xaaaaaa,0x000000, .9)
+	
+	// A directional light shines from a specific direction. 
+	// It acts like the sun, that means that all the rays produced are parallel. 
+	shadowLight = new THREE.DirectionalLight(0xffffff, .4);
+
+	// Set the direction of the light  
+	shadowLight.position.set( 8,60,-10 );
+	
+	// Allow shadow casting 
+	shadowLight.castShadow = true;
+
+	// define the visible area of the projected shadow
+	shadowLight.shadow.camera.left = -400;
+	shadowLight.shadow.camera.right = 400;
+	shadowLight.shadow.camera.top = 400;
+	shadowLight.shadow.camera.bottom = -400;
+	shadowLight.shadow.camera.near = 1;
+	shadowLight.shadow.camera.far = 1000;
+
+	// define the resolution of the shadow; the higher the better, 
+	// but also the more expensive and less performant
+	shadowLight.shadow.mapSize.width = 2048;
+	shadowLight.shadow.mapSize.height = 2048;
+	
+	// to activate the lights, just add them to the scene
+	scene.add(hemisphereLight);  
+	scene.add(shadowLight);
 }
