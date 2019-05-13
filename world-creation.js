@@ -1,6 +1,6 @@
 function addHero(){
 	var sphereGeometry = new THREE.SphereGeometry( heroRadius, 32, 32 );
-	var sphereMaterial = new THREE.MeshPhysicalMaterial( { color: 0x1b55e1 } )
+	var sphereMaterial = new THREE.MeshPhysicalMaterial( { color: Colors.blue } )
 	jumping=false;
 	heroSphere = new THREE.Mesh( sphereGeometry, sphereMaterial );
 	heroSphere.receiveShadow = true;
@@ -16,7 +16,7 @@ function addWorld(){
 	var sides=40;
 	var tiers=40;
 	var sphereGeometry = new THREE.SphereGeometry( worldRadius, sides,tiers);
-	var sphereMaterial = new THREE.MeshStandardMaterial( { color: 0xfffafa ,shading:THREE.FlatShading} )
+	var sphereMaterial = new THREE.MeshStandardMaterial( { color: Colors.pink ,shading:THREE.FlatShading} )
 	
 	var vertexIndex;
 	var vertexVector= new THREE.Vector3();
