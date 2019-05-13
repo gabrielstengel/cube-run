@@ -13,7 +13,6 @@ function update(){
 
     heroSphere.position.y+=bounceValue;
     
-    heroSphere.position.x=THREE.Math.lerp(heroSphere.position.x,currentLane, 2*clock.getDelta()); //clock.getElapsedTime());
     bounceValue-=gravity;
 
     if(clock.getElapsedTime()>treeReleaseInterval){
@@ -23,12 +22,16 @@ function update(){
 			score+=2*treeReleaseInterval;
 		}
     }
+
+    updateHero();
     doTreeLogic();
     doExplosionLogic();
     ballCol();
 }
 
 function GameLoop(){
+    
+
     requestAnimationFrame(GameLoop);
     update();
     render();

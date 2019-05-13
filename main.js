@@ -41,6 +41,7 @@ var score;
 var hasCollided;
 
 function init() {
+	document.addEventListener('mousemove', handleMouseMove, false);
 	createScene();
 	GameLoop();
 }

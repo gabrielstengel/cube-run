@@ -1,15 +1,15 @@
 function addHero(){
 	var sphereGeometry = new THREE.SphereGeometry( heroRadius, 32, 32 );
-	var sphereMaterial = new THREE.MeshPhysicalMaterial( { color: Colors.blue } )
+    var sphereMaterial = new THREE.MeshPhysicalMaterial( { color: Colors.blue } )
 	jumping=false;
 	heroSphere = new THREE.Mesh( sphereGeometry, sphereMaterial );
 	heroSphere.receiveShadow = true;
 	heroSphere.castShadow=true;
 	scene.add( heroSphere );
-	heroSphere.position.y=heroBaseY;
-	heroSphere.position.z=4.8;
+	heroSphere.position.y = heroBaseY;
+	heroSphere.position.z = 4.8;
 	currentLane=middleLane;
-    heroSphere.position.x=currentLane;
+    heroSphere.position.x = currentLane;
     heroSphere.rotation.z = Math.PI / 2;
 }
 function addWorld(){
@@ -22,10 +22,10 @@ function addWorld(){
 	rollingGroundSphere.receiveShadow = true;
     rollingGroundSphere.castShadow=false;
     
-	rollingGroundSphere.rotation.z= -Math.PI/2;
+	rollingGroundSphere.rotation.z=-Math.PI/2;
 	scene.add( rollingGroundSphere );
 	rollingGroundSphere.position.y= -24;
-	rollingGroundSphere.position.z= 2;
+	rollingGroundSphere.position.z=2;
 	addWorldTrees();
 }
 function addLight(){
