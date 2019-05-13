@@ -29,3 +29,10 @@ function doTreeLogic(){
 		console.log("remove tree");
 	});
 }
+
+
+function ballCol() {
+	if (heroSphere.position.distanceToSquared(rollingGroundSphere) < heroRadius + worldRadius) {
+        console.log("ball following below");
+	}
+}

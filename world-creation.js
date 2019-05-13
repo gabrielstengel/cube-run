@@ -18,14 +18,14 @@ function addWorld(){
 	var sphereGeometry = new THREE.SphereGeometry( worldRadius, sides,tiers);
 	var sphereMaterial = new THREE.MeshPhysicalMaterial( { color: Colors.pink } )
 	
-	
 	rollingGroundSphere = new THREE.Mesh( sphereGeometry, sphereMaterial );
 	rollingGroundSphere.receiveShadow = true;
-	rollingGroundSphere.castShadow=false;
-	rollingGroundSphere.rotation.z=-Math.PI/2;
+    rollingGroundSphere.castShadow=false;
+    
+	rollingGroundSphere.rotation.z= -Math.PI/2;
 	scene.add( rollingGroundSphere );
-	rollingGroundSphere.position.y=-24;
-	rollingGroundSphere.position.z=2;
+	rollingGroundSphere.position.y= -24;
+	rollingGroundSphere.position.z= 2;
 	addWorldTrees();
 }
 function addLight(){
