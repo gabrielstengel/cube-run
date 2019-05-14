@@ -89,3 +89,4 @@ function createSky(){
 	sky.mesh.position.y = -600;
 	scene.add(sky.mesh);
 }
+

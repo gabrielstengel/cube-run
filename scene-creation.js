@@ -35,6 +35,16 @@ function createScene(){
 	
 	camera.position.z = 9.5;
 	camera.position.y = 3.5;
+	orbitControl = new THREE.OrbitControls( camera, renderer.domElement );//helper to rotate around in scene
+	orbitControl.addEventListener( 'change', render );
+	orbitControl.noKeys = true;
+	orbitControl.noPan = true;
+	orbitControl.enableZoom = false;
+	orbitControl.minPolarAngle = 1.1;
+	orbitControl.maxPolarAngle = 1.1;
+	orbitControl.minAzimuthAngle = -0.2;
+	orbitControl.maxAzimuthAngle = 0.2;
+	
 	
 	window.addEventListener('resize', onWindowResize, false);//resize callback
 
