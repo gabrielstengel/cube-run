@@ -15,8 +15,40 @@ function addHero(){
 function addWorld(){
 	var sides=40;
 	var tiers=40;
-	var sphereGeometry = new THREE.SphereGeometry( worldRadius, 100,100);
-	var sphereMaterial = new THREE.MeshPhysicalMaterial( { color: Colors.pink } )
+	var sphereGeometry = new THREE.CylinderGeometry(600,600,800,40,10);
+	sphereGeometry.applyMatrix(new THREE.Matrix4().makeRotationX(-Math.PI/2));
+	sphereGeometry.mergeVertices();
+	// get the vertices
+	var l = sphereGeometry.vertices.length;
+	// create an array to store new data associated to each vertex
+	waves = [];
+	for (var i=0; i<l; i++){
+		// get each vertex
+		var v = sphereGeometry.vertices[i];
+
+		// store some data associated to it
+		waves.push({y:v.y,
+										 x:v.x,
+										 z:v.z,
+										 // a random angle
+										 ang:Math.random()*Math.PI*2,
+										 // a random distance
+										 amp:5 + Math.random()*15,
+										 // a random speed between 0.016 and 0.048 radians / frame
+										 speed:0.016 + Math.random()*0.032
+										});
+	};
+
+	var mat = new THREE.MeshPhongMaterial({
+		color:Colors.blue,
+		transparent:true,
+		opacity:.8,
+		shading:THREE.FlatShading,
+	});
+	mesh = new THREE.Mesh(sphereGeometry, mat);
+	mesh.receiveShadow = true;
+
+	var sphereMaterial = new THREE.MeshPhysicalMaterial( { color: Colors.blue } )
 	
 	rollingGroundSphere = new THREE.Mesh( sphereGeometry, sphereMaterial );
 	rollingGroundSphere.receiveShadow = true;

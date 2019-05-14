@@ -1,3 +1,11 @@
+// GAME VARIABLES
+var game;
+var deltaTime = 0;
+var newTime = new Date().getTime();
+var oldTime = new Date().getTime();
+var ennemiesPool = [];
+var particlesPool = [];
+var particlesInUse = [];
 
 
 // GAME LOGIC
@@ -31,7 +39,6 @@ function update(){
 
 function GameLoop(){
     
-
     requestAnimationFrame(GameLoop);
     update();
     render();
