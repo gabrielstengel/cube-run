@@ -27,7 +27,9 @@ function createScene(){
 
 	
 	createTreesPool();
-	addWorld();
+	createSea();
+	addWorldTrees();
+	createSky();
 	addHero();
 	createSky();
 	addLight();

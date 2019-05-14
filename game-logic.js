@@ -27,6 +27,7 @@ function update(){
     doTreeLogic();
     doExplosionLogic();
     ballCol();
+    sea.moveWaves();
 }
 
 function GameLoop(){

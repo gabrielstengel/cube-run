@@ -39,6 +39,7 @@ var particles;
 var scoreText;
 var score;
 var hasCollided;
+var sea;
 
 function init() {
 	document.addEventListener('mousemove', handleMouseMove, false);
