@@ -17,7 +17,13 @@ function addWorld(){
 	var tiers=40;
 	var sphereGeometry = new THREE.CylinderGeometry( worldRadius, worldRadius, 100, 100,100);
 	sphereGeometry.applyMatrix(new THREE.Matrix4().makeRotationX(-2*Math.PI/2));
-	var sphereMaterial = new THREE.MeshPhysicalMaterial( { color: Colors.blue } )
+	// create the material 
+	var sphereMaterial = new THREE.MeshPhongMaterial({
+		color:Colors.blue,
+		transparent:true,
+		opacity:.6,
+		shading:THREE.FlatShading,
+	});
 	
 	rollingGroundSphere = new THREE.Mesh( sphereGeometry, sphereMaterial );
 	rollingGroundSphere.receiveShadow = true;
