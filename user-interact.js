@@ -53,6 +53,9 @@ function updateHero(){
 	heroSphere.rotation.y = Math.PI / 2 - .3*(targetX-heroSphere.position.x);
 	//airplane.mesh.rotation.x = (airplane.mesh.position.y-targetY)*0.0064;
 
+	var targetY = heroSphere.position.y + bounceValue;
+	heroSphere.rotation.z = 0 + 3*(targetY-heroSphere.position.y);
+	//console.log(heroSphere.rotation.z );
 	
     
 	
