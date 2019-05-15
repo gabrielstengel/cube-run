@@ -124,7 +124,7 @@ function addLight() {
 	shadowLight = new THREE.DirectionalLight(0xffffff, .4);
 
 	// Set the direction of the light  
-	shadowLight.position.set(8 ,60,-10 );
+	shadowLight.position.set(8 ,10,10 );
 	
 	// Allow shadow casting 
 	shadowLight.castShadow = true;

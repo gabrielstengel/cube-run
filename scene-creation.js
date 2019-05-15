@@ -10,17 +10,18 @@ function createScene(){
 	heroRollingSpeed=(rollingSpeed*worldRadius/heroRadius)/5;
 	sphericalHelper = new THREE.Spherical();
 	pathAngleValues=[1.52,1.57,1.62];
-    sceneWidth=window.innerWidth;
-    sceneHeight=window.innerHeight;
-    scene = new THREE.Scene();//the 3d scene
-    //scene.fog = new THREE.FogExp2( 0xf0fff0, 0.05 );
-    camera = new THREE.PerspectiveCamera( 60, sceneWidth / sceneHeight, 0.1, 1000 );//perspective camera
-    renderer = new THREE.WebGLRenderer({alpha:true});//renderer with transparent backdrop
-    renderer.setClearColor(0xfffafa, 1); 
-    renderer.shadowMap.enabled = true;//enable shadow
-    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-    renderer.setSize( sceneWidth, sceneHeight );
-    dom = document.getElementById('world');
+	sceneWidth=window.innerWidth;
+	sceneHeight=window.innerHeight;
+	scene = new THREE.Scene();//the 3d scene
+	scene.background = new THREE.Color().setHSL( 0.6, 0, 1 );
+	//scene.fog = new THREE.FogExp2( 0xf0fff0, 0.05 );
+	camera = new THREE.PerspectiveCamera( 60, sceneWidth / sceneHeight, 0.1, 1000 );//perspective camera
+	renderer = new THREE.WebGLRenderer({alpha:true});//renderer with transparent backdrop
+	renderer.setClearColor(0xfffafa, 1); 
+	renderer.shadowMap.enabled = true;//enable shadow
+	renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+	renderer.setSize( sceneWidth, sceneHeight );
+	dom = document.getElementById('world');
 	dom.appendChild(renderer.domElement);
 	//stats = new Stats();
 	//dom.appendChild(stats.dom);

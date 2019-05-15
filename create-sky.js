@@ -61,6 +61,7 @@ Sky = function(){
 		// in case you don't: 
 		// we are simply converting polar coordinates (angle, distance) into Cartesian coordinates (x, y)
 		c.mesh.position.y = Math.sin(a)*h;
+		
 		c.mesh.position.x = Math.cos(a)*h;
 
 		// rotate the cloud according to its position
@@ -74,6 +75,7 @@ Sky = function(){
 		var s = 1+Math.random()*2;
 		c.mesh.scale.set(s,s,s);
 
+		if (c.mesh.position.y < 5) c.mesh.position.y = 5;
 		// do not forget to add the mesh of each cloud in the scene
 		this.mesh.add(c.mesh);  
 	}  
