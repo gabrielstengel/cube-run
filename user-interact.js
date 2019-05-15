@@ -2,41 +2,14 @@ function handleKeyDown(keyEvent){
 
 	//if(jumping)return;
 	var validMove=true;
-    if ( keyEvent.keyCode === 37) {//left
-        heroSphere.position.x=THREE.Math.lerp(heroSphere.position.x,leftLane, 2*clock.getDelta()); //clock.getElapsedTime());
-    
-		/*if(currentLane==middleLane){
-			currentLane=leftLane;
-		}else if(currentLane==rightLane){
-			currentLane=middleLane;
-		}else{
-			validMove=false;	
-		}*/
-    } else if ( keyEvent.keyCode === 39) {//right
-        heroSphere.position.x=THREE.Math.lerp(heroSphere.position.x,rightLane, 2*clock.getDelta()); //clock.getElapsedTime());
-    
-        /*
-		if(currentLane==middleLane){
-			currentLane=rightLane;
-		}else if(currentLane==leftLane){
-			currentLane=middleLane;
-		}else{
-			validMove=false;	
-		}*/
-	}else{
+   
 
-		if ( keyEvent.keyCode === 38){//up, jump
+		if ( keyEvent.keyCode === 32){//up, jump
 			bounceValue=0.1;
 			jumping=true;
 		}
-		validMove=false;
-	}
-    //heroSphere.position.x=currentLane;
-    /*
-	if(validMove){
-		jumping=true;
-		bounceValue=0.06;
-	}*/
+		 else {validMove=false;}
+
 }
 
 
@@ -72,7 +45,15 @@ function updateHero(){
 
 	// update the airplane's positions
 
-    heroSphere.position.x += (targetX - heroSphere.position.x)*0.1;
+	heroSphere.position.x += (targetX - heroSphere.position.x)*0.1;
+	
+	
+
+	// Rotate the plane proportionally to the remaining distance
+	heroSphere.rotation.y = Math.PI / 2 - .3*(targetX-heroSphere.position.x);
+	//airplane.mesh.rotation.x = (airplane.mesh.position.y-targetY)*0.0064;
+
+	
     
 	
 	

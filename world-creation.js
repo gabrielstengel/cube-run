@@ -113,6 +113,7 @@ function addLight() {
 	// an ambient light modifies the global color of a scene and makes the shadows softer
 	ambientLight = new THREE.AmbientLight(0xdc8874, .5);
 	scene.add(ambientLight);
+	
 	// A hemisphere light is a gradient colored light; 
 	// the first parameter is the sky color, the second parameter is the ground color, 
 	// the third parameter is the intensity of the light
