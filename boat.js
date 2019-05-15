@@ -24,11 +24,11 @@ var Boat = function() {
 	
 	// Create the wing
 	var geomSideWing = new THREE.BoxGeometry(40,8,150,1,1,1);
-	var matSideWing = new THREE.MeshPhongMaterial({color:Colors.red, shading:THREE.FlatShading});
+	var matSideWing = new THREE.MeshPhongMaterial({color:0x9400D3, shading:THREE.FlatShading});
 	var sideWing = new THREE.Mesh(geomSideWing, matSideWing);
 	sideWing.castShadow = true;
 	sideWing.receiveShadow = true;
-	this.mesh.add(sideWing);
+	//this.mesh.add(sideWing);
 	
 	// propeller
 	var geomPropeller = new THREE.BoxGeometry(20,10,10,1,1,1);
@@ -47,12 +47,12 @@ var Boat = function() {
 	blade.receiveShadow = true;
 	this.propeller.add(blade);
 	this.propeller.position.set(50,0,0);
-    this.mesh.add(this.propeller);
+    //this.mesh.add(this.propeller);
     
     // Cockpit
 
     var geomCockpit = new THREE.BoxGeometry(80,50,50,1,1,1);
-    var matCockpit = new THREE.MeshPhongMaterial({color:Colors.red, shading:THREE.FlatShading});
+    var matCockpit = new THREE.MeshPhongMaterial({color:0x9400D3, shading:THREE.FlatShading});
 
     // we can access a specific vertex of a shape through 
     // the vertices array, and then move its x, y and z property:
