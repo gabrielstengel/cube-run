@@ -1,8 +1,14 @@
 function addHero(){
+
+	boat = new Boat();
+	boat.mesh.scale.set(.015,.015,.015);
+	boat.mesh.position.y = 100;
+	//scene.add(boat.mesh);
+
 	var sphereGeometry = new THREE.SphereGeometry( heroRadius, 32, 32 );
     var sphereMaterial = new THREE.MeshPhysicalMaterial( { color: Colors.red } )
 	jumping=false;
-	heroSphere = new THREE.Mesh( sphereGeometry, sphereMaterial );
+	heroSphere = boat.mesh;//new THREE.Mesh( sphereGeometry, sphereMaterial );
 	heroSphere.receiveShadow = true;
 	heroSphere.castShadow=true;
 	scene.add( heroSphere );
@@ -10,7 +16,7 @@ function addHero(){
 	heroSphere.position.z = 4.8;
 	currentLane=middleLane;
     heroSphere.position.x = currentLane;
-    heroSphere.rotation.z = Math.PI / 2;
+    heroSphere.rotation.y = Math.PI / 2;
 }
 Sea = function(){
 	var sides=40;
@@ -21,9 +27,10 @@ Sea = function(){
 	var sphereMaterial = new THREE.MeshPhongMaterial({
 		color:Colors.blue,
 		transparent:true,
-		opacity:.6,
+		opacity:.95,
 		shading:THREE.FlatShading,
 	});
+
 
 	sphereGeometry.mergeVertices();
 
@@ -116,7 +123,7 @@ function addLight() {
 	shadowLight = new THREE.DirectionalLight(0xffffff, .4);
 
 	// Set the direction of the light  
-	shadowLight.position.set( 8,60,-10 );
+	shadowLight.position.set(8 ,60,-10 );
 	
 	// Allow shadow casting 
 	shadowLight.castShadow = true;

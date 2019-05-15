@@ -40,9 +40,11 @@ var scoreText;
 var score;
 var hasCollided;
 var sea;
+var moonLanding;
 
 function init() {
 	document.addEventListener('mousemove', handleMouseMove, false);
+	 moonLanding = new Date('July 20, 69 00:20:18 GMT+00:00');
 	createScene();
 	GameLoop();
 }

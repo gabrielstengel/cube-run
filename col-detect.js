@@ -6,6 +6,9 @@ function doTreeLogic(){
 	treesInPath.forEach( function ( element, index ) {
 		oneTree=treesInPath[ index ];
 		treePos.setFromMatrixPosition( oneTree.matrixWorld );
+
+		//oneTree.position.y -=  2*Math.sin(0.05*new Date().getTime())  ;
+
 		if(treePos.z>6 &&oneTree.visible){//gone out of our view zone
 			treesToRemove.push(oneTree);
 		}else{

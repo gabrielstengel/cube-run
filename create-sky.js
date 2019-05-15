@@ -7,7 +7,7 @@ Cloud = function(){
 	var geom = new THREE.BoxGeometry(20,20,20);
 	
 	// create a material; a simple white material will do the trick
-	var mat = new THREE.MeshPhysicalMaterial( { color: Colors.blue } )
+	var mat = new THREE.MeshPhysicalMaterial( { color: Colors.white } )
 	
 	// duplicate the geometry a random number of times
 	var nBlocs = 3+Math.floor(Math.random()*3);
@@ -89,4 +89,3 @@ function createSky(){
 	sky.mesh.position.y = -600;
 	scene.add(sky.mesh);
 }
-

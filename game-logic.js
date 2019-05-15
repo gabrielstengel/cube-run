@@ -5,7 +5,8 @@ function update(){
 	//stats.update();
     //animate
     rollingGroundSphere.rotation.x += rollingSpeed;
-    heroSphere.rotation.x -= heroRollingSpeed;
+    //heroSphere.rotation.x -= heroRollingSpeed;
+    sky.mesh.position.x += 0.1;
     if(heroSphere.position.y<=heroBaseY){
     	jumping=false;
     	bounceValue=(Math.random()*0.04)+0.005;

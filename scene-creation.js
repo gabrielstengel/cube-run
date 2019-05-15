@@ -13,7 +13,7 @@ function createScene(){
     sceneWidth=window.innerWidth;
     sceneHeight=window.innerHeight;
     scene = new THREE.Scene();//the 3d scene
-    scene.fog = new THREE.FogExp2( 0xf0fff0, 0.05 );
+    //scene.fog = new THREE.FogExp2( 0xf0fff0, 0.05 );
     camera = new THREE.PerspectiveCamera( 60, sceneWidth / sceneHeight, 0.1, 1000 );//perspective camera
     renderer = new THREE.WebGLRenderer({alpha:true});//renderer with transparent backdrop
     renderer.setClearColor(0xfffafa, 1); 
@@ -35,9 +35,9 @@ function createScene(){
 	addLight();
 	addExplosion();
 	
-	camera.position.z = 9.5;
-	camera.position.y = 3.5;
-	orbitControl = new THREE.OrbitControls( camera, renderer.domElement );//helper to rotate around in scene
+	camera.position.z = 10.5;
+	camera.position.y = 4.5;
+	/*/orbitControl = new THREE.OrbitControls( camera, renderer.domElement );//helper to rotate around in scene
 	orbitControl.addEventListener( 'change', render );
 	orbitControl.noKeys = true;
 	orbitControl.noPan = true;
@@ -47,7 +47,7 @@ function createScene(){
 	orbitControl.minAzimuthAngle = -0.2;
 	orbitControl.maxAzimuthAngle = 0.2;
 	
-	
+	*/
 	window.addEventListener('resize', onWindowResize, false);//resize callback
 
 	document.onkeydown = handleKeyDown;
