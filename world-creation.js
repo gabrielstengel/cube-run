@@ -119,6 +119,7 @@ function addLight() {
 	// the third parameter is the intensity of the light
 	hemisphereLight = new THREE.HemisphereLight(0xaaaaaa,0x000000, .9)
 	
+	
 	// A directional light shines from a specific direction. 
 	// It acts like the sun, that means that all the rays produced are parallel. 
 	shadowLight = new THREE.DirectionalLight(0xffffff, .4);

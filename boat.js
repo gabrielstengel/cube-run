@@ -2,13 +2,7 @@ var Boat = function() {
 	
 	this.mesh = new THREE.Object3D();
 	
-	// Create the cabin
-	var geomCockpit = new THREE.BoxGeometry(60,50,50,1,1,1);
-	var matCockpit = new THREE.MeshPhongMaterial({color:Colors.red, shading:THREE.FlatShading});
-	var cockpit = new THREE.Mesh(geomCockpit, matCockpit);
-	cockpit.castShadow = true;
-	cockpit.receiveShadow = true;
-	this.mesh.add(cockpit);
+
 	
 	// Create the engine
 	var geomEngine = new THREE.BoxGeometry(20,50,50,1,1,1);
