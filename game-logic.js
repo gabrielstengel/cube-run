@@ -8,8 +8,15 @@ function update(){
     //heroSphere.rotation.x -= heroRollingSpeed;
     sky.mesh.position.x += 0.1;
     if(heroSphere.position.y<=heroBaseY){
-    	jumping=false;
-    	bounceValue=(Math.random()*0.04)+0.005;
+    	
+        
+        if (jumping == true) {
+            bigSplash(); }
+        else  {
+            splash();
+        }
+        bounceValue=(Math.random()*0.04)+0.005;
+        jumping=false;
     }
 
     heroSphere.position.y+=bounceValue;
@@ -27,6 +34,8 @@ function update(){
     updateHero();
     doTreeLogic();
     doExplosionLogic();
+    doSplashLogic();
+    doBigSplashLogic();
     ballCol();
     sea.moveWaves();
 }

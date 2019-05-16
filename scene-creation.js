@@ -35,6 +35,8 @@ function createScene(){
 	createSky();
 	addLight();
 	addExplosion();
+	addSplash();
+	addBigSplash();
 	
 	camera.position.z = 10.5;
 	camera.position.y = 4.5;
@@ -62,10 +64,51 @@ function addExplosion(){
 		particleGeometry.vertices.push( vertex );
 	}
 	var pMaterial = new THREE.ParticleBasicMaterial({
-	  color: Colors.brownDark,
+	  color: 0xFFE599,
 	  size: 0.3
 	});
 	particles = new THREE.Points( particleGeometry, pMaterial );
 	scene.add( particles );
 	particles.visible=false;
+}
+
+var splash_particles;
+var splash_particleGeometry;
+var splash_particleCount =10;
+var splash_power;
+
+var bigsplash_particleCount = 60;
+var bigsplash_particles;
+var bigsplash_particleGeometry;
+var bigsplash_power;
+
+
+function addSplash() {
+	splash_particleGeometry = new THREE.Geometry();
+	for (var i = 0; i < splash_particleCount; i ++ ) {
+		var vertex = new THREE.Vector3();
+		splash_particleGeometry.vertices.push( vertex );
+	}
+	var pMaterial = new THREE.ParticleBasicMaterial({
+	  color:  Colors.blue ,
+	  size: 0.15
+	});
+	splash_particles = new THREE.Points( splash_particleGeometry, pMaterial );
+	scene.add( splash_particles );
+	splash_particles.visible=false;
+}
+
+function addBigSplash() {
+	bigsplash_particleGeometry = new THREE.Geometry();
+	for (var i = 0; i < bigsplash_particleCount; i ++ ) {
+		var vertex = new THREE.Vector3();
+		bigsplash_particleGeometry.vertices.push( vertex );
+	}
+	var pMaterial = new THREE.ParticleBasicMaterial({
+	  color:  Colors.blue ,
+	  size: 0.4
+	});
+	bigsplash_particles = new THREE.Points( bigsplash_particleGeometry, pMaterial );
+	scene.add( bigsplash_particles );
+	bigsplash_particles.visible=false;
 }

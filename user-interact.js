@@ -3,9 +3,9 @@ function handleKeyDown(keyEvent){
 	//if(jumping)return;
 	var validMove=true;
    
-
+	if (jumping == true) return;
 		if ( keyEvent.keyCode === 32){//up, jump
-			bounceValue=0.1;
+			bounceValue=0.2;
 			jumping=true;
 		}
 		 else {validMove=false;}
@@ -54,7 +54,7 @@ function updateHero(){
 	//airplane.mesh.rotation.x = (airplane.mesh.position.y-targetY)*0.0064;
 
 	var targetY = heroSphere.position.y + bounceValue;
-	heroSphere.rotation.z = 0 + 3*(targetY-heroSphere.position.y);
+	heroSphere.rotation.z = Math.PI / 10 + 3.5*(targetY-heroSphere.position.y);
 	//console.log(heroSphere.rotation.z );
 	
     

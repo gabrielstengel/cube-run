@@ -19,8 +19,8 @@ var heroRadius=0.4;
 var sphericalHelper;
 var pathAngleValues;
 var heroBaseY=2;
-var bounceValue=0.1;
-var gravity=0.003 ;
+var bounceValue=0.3;
+var gravity=0.005 ;
 var leftLane=-1;
 var rightLane=1;
 var middleLane=0;
@@ -35,6 +35,9 @@ var particleGeometry;
 var particleCount=20;
 var explosionPower =1.06;
 var particles;
+
+
+
 //var stats;
 var scoreText;
 var score;
