@@ -37,17 +37,22 @@ var explosionPower =1.06;
 var particles;
 
 
-
 //var stats;
 var scoreText;
 var score;
 var hasCollided;
 var sea;
-var moonLanding;
+var coins;
+var time = new THREE.Clock(true);
+time.start();
+var resettext;
 
 function init() {
 	document.addEventListener('mousemove', handleMouseMove, false);
 	 moonLanding = new Date('July 20, 69 00:20:18 GMT+00:00');
+	coins = document.getElementById("distValue");
+	timeleft = document.getElementById("energyBar");
+	resettext = document.getElementById("instructions");
 	createScene();
 	GameLoop();
 }
@@ -57,13 +62,6 @@ function render(){
     renderer.render(scene, camera);
 }
 
-
-function gameOver () {
-  //scancelAnimationFrame( globalRenderID );
-  //window.clearInterval( powerupSpawnIntervalID );
-}
-
-
 function onWindowResize() {
 	//resize & align
 	sceneHeight = window.innerHeight;
@@ -72,3 +70,4 @@ function onWindowResize() {
 	camera.aspect = sceneWidth/sceneHeight;
 	camera.updateProjectionMatrix();
 }
+

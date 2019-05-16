@@ -1,4 +1,5 @@
 
+var game;
 
 function createScene(){
 	hasCollided=false;
@@ -25,8 +26,7 @@ function createScene(){
 	dom.appendChild(renderer.domElement);
 	//stats = new Stats();
 	//dom.appendChild(stats.dom);
-
-	
+	createMenu();	
 	createTreesPool();
 	createSea();
 	addWorldTrees();
@@ -111,4 +111,12 @@ function addBigSplash() {
 	bigsplash_particles = new THREE.Points( bigsplash_particleGeometry, pMaterial );
 	scene.add( bigsplash_particles );
 	bigsplash_particles.visible=false;
+}
+
+function createMenu() {
+	game = {speed:0,
+	coins: 0,
+	time:  0,
+	status: "playing"
+	}
 }

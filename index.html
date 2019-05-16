@@ -12,11 +12,29 @@
 <script src="trees.js"></script>
 <script src="main.js"></script>
 <link rel="stylesheet" type="text/css" href="style.css">
-<div id="world">
-    <script>
-        init();
-    </script>
-</div>
 
+<div class="game-holder" id="gameHolder">
+	<div class="header">
+		<div class="score" id="score">
+			<div class="score__content" id="dist">
+				<div class="score__label">coins</div>
+				<div class="score__value score__value--dist" id="distValue">0</div>
+			</div>
+			<div class="score__content" id="energy">
+				<div class="score__label">time</div>
+				<div class="score__value score__value--energy" id="energyValue">
+					<div class="energy-bar" id="energyBar"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="message message--instructions" id="instructions">collect as many coins as you can in 20 seconds</div>
+	<div class="world" id="world">
+		<script>
+	        init();
+	    </script>
+	</div>
+	
+</div>
 
 

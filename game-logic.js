@@ -2,6 +2,7 @@
 
 // GAME LOGIC
 function update(){
+    
 	//stats.update();
     //animate
     rollingGroundSphere.rotation.x += rollingSpeed;
@@ -32,7 +33,18 @@ function update(){
     }
 
     updateHero();
-    doTreeLogic();
+    if (game.status=="playing"){
+        doTreeLogic();
+    }
+    if (game.status=="waitingReplay"){
+        console.log("here?");
+        document.onkeydown = function (e) {
+        switch (e.key) {
+            case 'ArrowDown':
+                resetgame();
+            }
+        };
+    }
     doExplosionLogic();
     doSplashLogic();
     doBigSplashLogic();
@@ -40,9 +52,27 @@ function update(){
     sea.moveWaves();
 }
 
-function GameLoop(){
-    
+function resetgame(event){
+    resettext.innerHTML = "collect as many coins as you can in 20 seconds";
+    createMenu();
+    coins.innerHTML = game.coins;
+    game.status == "playing"
+    time = new THREE.Clock(true);
+    time.start();
+    updateTime();
+}
 
+
+function updateTime(){
+    if (time.getElapsedTime() >= 20) {
+       game.status = "waitingReplay";
+       resettext.innerHTML = "click to restart";
+    }
+    timeleft.style.right = 5*(20-time.getElapsedTime())+"%";
+
+}
+
+function GameLoop(){
     requestAnimationFrame(GameLoop);
     update();
     render();

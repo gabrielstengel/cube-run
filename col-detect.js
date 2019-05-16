@@ -1,4 +1,7 @@
 function doTreeLogic(){
+	if (game.status == "playing") {
+		updateTime();
+	}
 	var oneTree;
 	var treePos = new THREE.Vector3();
 	var treesToRemove=[];
@@ -14,11 +17,12 @@ function doTreeLogic(){
 		}else{
 			//check collision
 			if(treePos.distanceTo(heroSphere.position)<=0.9){
-				console.log("hit");
 				hasCollided=true;
 				treesToRemove.push(oneTree);
 				explode();
-				gameOver();
+				if (game.status == "playing") {
+					addCoin();
+				}
 			}
 		}
 	});
@@ -30,10 +34,17 @@ function doTreeLogic(){
 		treesInPath.splice(fromWhere,1);
 		treesPool.push(oneTree);
 		oneTree.visible=false;
+
 		console.log("remove tree");
 	});
+
+	
 }
 
+function addCoin() {
+	game.coins += 1;
+	coins.innerHTML = game.coins;
+}
 
 function ballCol() {
 	if (heroSphere.position.distanceToSquared(rollingGroundSphere) < heroRadius + worldRadius) {
