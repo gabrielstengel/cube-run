@@ -5,6 +5,7 @@
 	overflow: hidden;
 	background: linear-gradient(#e4e0ba, #f7d9aa);
 	z-index: -2;
+	font-family: 'Courier New';
 }
 
 #begin {
@@ -18,14 +19,13 @@ button{
 .header {
 	position: absolute;
 	top: 4vh;
-	left: 43%;
+	left: 35%;
 	text-align: center;
 	pointer-events: none;
 	z-index: -1;
 }
 
 .header h1 {
-	font-family: 'Playfair Display';
 	font-size: 4.5em;
 	line-height: 1;
 	margin: 0;
@@ -71,7 +71,7 @@ button{
 }
 
 .score__label {
-	font-size: 9px;
+	font-size: 40px;
 	position: relative;
 	margin: 0 0 0.5em 0;
 	text-align: center;
@@ -81,17 +81,16 @@ button{
 }
 
 .score__value {
-	font-family: 'Playfair Display';
 	font-weight: bold;
 	color: #d1b790;
 }
 
 .score__value--level {
-	font-size: 26px;
+	font-size: 40px;
 }
 
 .score__value--dist {
-	font-size: 30px;
+	font-size: 40px;
 }
 
 .level-circle {
@@ -105,7 +104,7 @@ button{
 
 .score__value--energy {
 	position: relative;
-	width: 60px;
+	width: 250px;
 	height: 8px;
 	margin-top: 20px;
 	border-radius: 3px;
@@ -148,8 +147,8 @@ button{
 }
 
 .message--instructions {
-	font-family: 'Playfair Display';
-	font-size: 0.85em;
+	font-family: 'Lucida Console';
+	font-size: 30px;
 	bottom: 8vh;
 	letter-spacing: 0.2em;
 	color: black;
@@ -160,7 +159,12 @@ button{
 	color: #d6483b;
 	white-space: nowrap;
 }
-
+.coincount {
+	color: red;
+	font-size: 40px;
+	padding-top: 10px;
+	padding-bottom: 10pxx;
+}
 @-webkit-keyframes blinking {
 	0% { opacity: 1; }
 	50% { opacity: 0; }

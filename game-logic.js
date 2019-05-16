@@ -66,7 +66,7 @@ function resetgame(event){
 function updateTime(){
     if (time.getElapsedTime() >= 20) {
        game.status = "waitingReplay";
-       resettext.innerHTML = "click to restart";
+       resettext.innerHTML = "your score is <span class='coincount'>" + game.coins + "</span>. click the down key to restart";
     }
     timeleft.style.right = 5*(20-time.getElapsedTime())+"%";
 
